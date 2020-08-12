@@ -1,6 +1,3 @@
-import { gql } from 'apollo-server';
-
-const Vehicle = gql`
   """
   Highlevel vehicle data.
   """
@@ -7930,39 +7927,39 @@ const Vehicle = gql`
     lowBatteryLevel: Boolean
 
     """
-    Information on the state of charge of the vehicle's high voltage battery.
-    """
-    stateOfCharge: Vehicle_Drivetrain_BatteryManagement_StateOfCharge
-
-    """
-    Gross capacity of the battery (in kWh).
+    Gross capacity of the battery (in kWh)
     """
     grossCapacity: Int
 
     """
-    Net capacity of the battery (in kWh).
+    Net capacity of the battery (in kWh)
     """
     netCapacity: Int
 
     """
-    Nominal Voltage of the battery (in V).
+    Nominal Voltage of the battery (in V)
     """
     nominalVoltage: Int
 
     """
-    Referent Voltage of the battery (in V).
+    Referent Voltage of the battery (in V)
     """
     referentVoltage: Int
 
     """
-    The accumulated energy delivered to the battery during charging over lifetime (in kWh).
+    The accumulated energy delivered to the battery during charging over lifetime (in kWh)
     """
     accumulatedChargedEnergy: Float
 
     """
-    The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime (in kWh).
+    The accumulated energy leaving HV battery for propulsion and auxiliary loads over lifetime (in kWh)
     """
     accumulatedConsumedEnergy: Float
+
+    """
+    Information on the state of charge of the vehicle's high voltage battery
+    """
+    stateOfCharge: Vehicle_Drivetrain_BatteryManagement_StateOfCharge
   }
 
   enum Vehicle_Drivetrain_BatteryManagement_ChargingInlet_Enum {
@@ -7977,22 +7974,23 @@ const Vehicle = gql`
     DC_Chademo
   }
 
+
   """
   Information on the state of charge of the vehicle's high voltage battery.
   """
   type Vehicle_Drivetrain_BatteryManagement_StateOfCharge {
     """
-    Physical state of charge of the high voltage battery. This is not necessarily the state of charge being displayed to the customer (as a percentage between 0.0% - 100.0%).
+    Physical state of charge of the high voltage battery. This is not necessarily the state of charge being displayed to the customer (as a percentage between 0.0% - 100.0%)
     """
     current: Float
 
     """
-    State of charge displayed to the customer (as a percentage between 0.0% - 100.0%).
+    State of charge displayed to the customer (as a percentage between 0.0% - 100.0%)
     """
     displayed: Float
 
     """
-    Target state of charge set (eg. by customer; as a percentage between 0% - 100%).
+    Target state of charge set (eg. by customer; as a percentage between 0% - 100%)
     """
     target: Int
   }
@@ -9167,6 +9165,3 @@ const Vehicle = gql`
     """
     vehicleSpecialUsage: String
   }
-`;
-
-export default Vehicle;
